@@ -1,6 +1,6 @@
 const axios = require('axios');
 exports.createMail = async (req, res, next) => {
-
+console.log(req.body);
     try{
          const result = await axios({
             headers: {'SOAPAction': `${process.env.SOAP_HOST}/createMessage`},
@@ -22,7 +22,7 @@ exports.createMail = async (req, res, next) => {
 };
 
 exports.getAllMessages = async (req, res, next) => {
- 
+    console.log(req.body);
     try{
          const result = await axios({
             headers: {'SOAPAction': `${process.env.SOAP_HOST}/getAllMessages`},

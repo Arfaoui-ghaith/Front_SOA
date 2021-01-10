@@ -3,7 +3,7 @@ const app = express();
 const morgan = require('morgan');
 const mailRouter = require('./routes/mailRoutes');
 app.use(morgan('dev'));
-
+app.use(express.json());
 app.use('/api/v1/mails', mailRouter);
 
 app.all('*', (req, res) => {
